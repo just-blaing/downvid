@@ -1,4 +1,3 @@
-# Создано Blaing.
 from pytube import YouTube
 
 print("Отправьте ссылку на видео.")
