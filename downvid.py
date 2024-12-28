@@ -1,12 +1,14 @@
 from pytube import YouTube
+import time
 
-print("Отправьте ссылку на видео.")
-video_url = input()
+video_url = input("link: ")
 
 try:
     yt = YouTube(video_url)
     video = yt.streams.get_highest_resolution()
     video.download()
-    print("Ваше видео установлено! Оно находится в той же папке, где и код.")
+    print("downloaded!")
 except Exception as e:
-    print("Произошла ошибка при установке видео:", str(e))
+    print(str(e))
+    time.sleep(3)
+    exit()
