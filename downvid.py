@@ -4,7 +4,7 @@ import yt_dlp
 
 
 def download_video():
-    url = input("link: ")
+    url = input("ссылка: ")
     ydl_opts = {
         'format': 'bestvideo+bestaudio/best',
         'outtmpl': '%(title)s.%(ext)s',
@@ -25,11 +25,11 @@ def download_video():
             video_size = os.path.getsize(video_file)
             duration_str = f"{video_duration // 60} min {video_duration % 60} sec"
             size_str = f"{video_size / (1024 * 1024):.2f} МБ"
-            print(f"downloaded!\n"
-                  f"name: {video_title}\n"
-                  f"duration: {duration_str}\n"
-                  f"size: {size_str}\n"
-                  f"file name: {video_file}")
+            print(f"скачано!\n"
+                  f"имя: {video_title}\n"
+                  f"длина: {duration_str}\n"
+                  f"размер: {size_str}\n"
+                  f"название файла: {video_file}")
     except Exception as e:
         print(f"{str(e)}")
 
